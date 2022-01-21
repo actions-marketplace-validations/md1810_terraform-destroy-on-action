@@ -2,7 +2,7 @@
 name: 'Terraform destroy on github action aws v1'
 description: 'Destroy with terraform using remote state'
 branding:
-  icon: 'paperclip'
+  icon: 'Circle'
   color: 'white'
 inputs:
   org_name:
