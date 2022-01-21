@@ -1,5 +1,5 @@
 # destroy.yml
-name: 'Terraform destroy on github action aws'
+name: 'Terraform destroy on github action aws v1'
 description: 'Destroy with terraform using remote state'
 inputs:
   org_name:
