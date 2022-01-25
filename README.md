@@ -1,11 +1,10 @@
 # terraform-destroy-on-action
 
 
-git action which is published on github market place
+Git action which is published on github Marketplace to use
 
-#############################################################
 
-**#USE Example**
+## **USE Example**
 
     - name: Terraform destroy on github action aws v1
       env:
