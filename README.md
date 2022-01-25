@@ -24,8 +24,13 @@ git action which is published on github market place
 ## **Below mentioned variable should be stored in Github Secrets**
 
 # **TOKEN_GITHUB**            = Github Token (Required)
+
 # **AWS_REGION**              = Region (Required)
+
 # **AWS_ACCESS_KEY_ID**       = Access key id (Required)
+
 # **AWS_SECRET_ACCESS_KEY**   = Secret key id (Required)
+
 # **INPUT_ORG_NAME**          = Organization/Account Username (Required)
+
 # **INPUT_REPO_NAME**         = Repository Name (Required)
