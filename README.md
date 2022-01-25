@@ -20,9 +20,9 @@ git action which is published on github market place
         repo_name: ${{ secrets.INPUT_REPO_NAME }}
 
 
-###############################################################
-**Below mentioned variable should be stored in Github Secrets**
-###############################################################
+
+## **Below mentioned variable should be stored in Github Secrets**
+
 **TOKEN_GITHUB**            = Github Token (Required)
 **AWS_REGION**              = Region (Required)
 **AWS_ACCESS_KEY_ID**       = Access key id (Required)
