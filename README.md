@@ -6,6 +6,14 @@ Git action which is published on github Marketplace to use
 
 ## **USE Example**
 
+jobs:
+  issue_parser:
+    runs-on: ubuntu-latest
+    name: Terraform destroy
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      
     - name: Terraform destroy on github action aws v1
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
