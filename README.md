@@ -17,6 +17,7 @@ jobs:
         AWS_REGION: ${{ secrets.AWS_REGION }}
         AWS_ACCESS_KEY_ID:  ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        
       uses: md1810/terraform-destroy-on-action@v5.1
       with:
         org_name: ${{ secrets.INPUT_ORG_NAME }}
