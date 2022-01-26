@@ -6,14 +6,14 @@ Git action which is published on github Marketplace to use
 
 ## **USE Example**
 
-
+```
 jobs:
   issue_parser:
   
     runs-on: ubuntu-latest
     name: Terraform destroy
-    steps:      
     
+    steps:      
     - name: Terraform destroy on github action aws v1
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_GITHUB }}
@@ -24,7 +24,8 @@ jobs:
       uses: md1810/terraform-destroy-on-action@v5.1
       with:
         org_name: ${{ secrets.INPUT_ORG_NAME }}
-        repo_name: ${{ secrets.INPUT_REPO_NAME }}
+        repo_name: ${{ secrets.INPUT_REPO_NAME }}```
+
 
 ## **Below mentioned variable should be stored in Github Secrets**
 
