@@ -11,6 +11,7 @@ COPY id_rsa /root/.ssh/id_rsa
 
 RUN chmod 700 /root/.ssh/id_rsa
 RUN chown -R root:root /root/.ssh
+RUN ssh-keyscan github.com >> ~/.ssh/known_hosts
 RUN touch /root/.ssh/known_hosts
 
 
