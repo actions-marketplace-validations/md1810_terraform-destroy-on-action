@@ -1,11 +1,11 @@
-FROM ubuntu:18.04
+FROM alpine:3.10
 
 ENV TERRAFORM_VERSION=0.12.16
 
 COPY destroy.sh /destroy.sh
 
-RUN apt-get update && \
-    apt-get install curl jq python bash ca-certificates git ssh openssh-server openssl unzip wget -y && \
+RUN apk update && \
+    apk add curl jq python bash ca-certificates git openssl unzip wget && \
     cd /tmp && \
     wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
