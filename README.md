@@ -1,6 +1,6 @@
 # terraform-destroy-on-action
 
-works with Privated Repository
+works fine with Privated Repository
 
 Git action which is published on github Marketplace to use
 
