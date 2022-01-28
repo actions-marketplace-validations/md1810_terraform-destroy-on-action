@@ -4,8 +4,8 @@ ENV TERRAFORM_VERSION=0.12.16
 
 COPY destroy.sh /destroy.sh
 
-RUN apk update && \
-    apk add curl jq python bash ca-certificates git openssl unzip wget && \
+RUN apt-get update && \
+    sudo apt-get install curl jq python bash ca-certificates git openssl unzip wget -y && \
     cd /tmp && \
     wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
     unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin && \
