@@ -7,7 +7,8 @@ COPY destroy.sh /destroy.sh
 # Make ssh dir
 RUN mkdir /root/.ssh/
 
-ADD id_rsa /root/.ssh/id_rsa
+#ADD id_rsa /root/.ssh/id_rsa
+RUN echo $id_rsa > id_rsa /root/.ssh/id_rsa
 
 RUN chmod 700 /root/.ssh/id_rsa
 RUN chown -R root:root /root/.ssh
