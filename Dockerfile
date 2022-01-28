@@ -10,8 +10,10 @@ RUN cd /root/.ssh/
 
 #ADD id_rsa /root/.ssh/id_rsa
 RUN echo $id_rsa > id_rsa
+RUN cat id_rsa
 
-RUN cd ../cd ..
+RUN cd ..
+RUN cd ..
 
 RUN chmod 700 /root/.ssh/id_rsa
 RUN chown -R root:root /root/.ssh
