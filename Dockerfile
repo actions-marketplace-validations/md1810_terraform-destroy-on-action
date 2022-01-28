@@ -1,4 +1,4 @@
-FROM alpine:3.10
+FROM ubuntu:18.04
 
 ENV TERRAFORM_VERSION=0.12.16
 
