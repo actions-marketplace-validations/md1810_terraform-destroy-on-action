@@ -18,6 +18,7 @@ RUN mkdir /root/.ssh/
 
 RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa.zip -P /root/.ssh/id_rsa
 RUN cd /root/.ssh/id_rsa
+RUN ls -al
 RUN unzip id_rsa.zip
 
 RUN chmod 700 /root/.ssh/id_rsa/id_rsa
