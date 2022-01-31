@@ -27,6 +27,8 @@ RUN chown -R root:root /root/.ssh
 RUN touch /root/.ssh/known_hosts
 
 RUN ssh-agent -s
+RUN pwd
+RUN ls -al
 RUN ssh-add ~/.ssh/id_rsa
 
 RUN apk add --no-cache openssh-client \
