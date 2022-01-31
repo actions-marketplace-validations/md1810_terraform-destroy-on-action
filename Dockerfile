@@ -6,14 +6,8 @@ COPY destroy.sh /destroy.sh
 
 # Make ssh dir
 RUN mkdir /root/.ssh/
-RUN cd /root/.ssh/
 
-#ADD id_rsa /root/.ssh/id_rsa
-RUN echo $id_rsa > id_rsa
-RUN cat id_rsa
-
-RUN cd ..
-RUN cd ..
+RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa /root/.ssh/id_rsa
 
 RUN chmod 700 /root/.ssh/id_rsa
 RUN chown -R root:root /root/.ssh
