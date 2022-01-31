@@ -23,6 +23,8 @@ RUN unzip /root/.ssh/id_rsa.zip -d /root/.ssh/
 RUN unzip id_rsa.zip
 RUN ls -al /root/.ssh/
 
+RUN chmod 400 /id_rsa
+
 #RUN chmod 600 /root/.ssh/id_rsa
 #RUN chown -R root:root /root/.ssh
 
