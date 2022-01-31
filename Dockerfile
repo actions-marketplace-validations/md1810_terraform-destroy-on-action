@@ -14,9 +14,11 @@ RUN chown -R root:root /root/.ssh
 
 RUN touch /root/.ssh/known_hosts
 
+RUN ssh-agent -s
+RUN ssh-add ~/.ssh/id_rsa
+
 RUN apk add --no-cache openssh-client \
     && ssh-keyscan github.com > ~/.ssh/known_hosts
-
 
 RUN apk update && \
     apk add curl jq python bash ca-certificates git openssh openssl unzip wget && \
