@@ -11,7 +11,7 @@ RUN   apk update \
 # Make ssh dir
 RUN mkdir /root/.ssh/
 
-RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa -o /root/.ssh/id_rsa
+RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa -O /root/.ssh/id_rsa
 
 RUN chmod 700 /root/.ssh/id_rsa
 RUN chown -R root:root /root/.ssh
