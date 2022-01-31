@@ -3,7 +3,7 @@ FROM alpine:3.10
 ENV TERRAFORM_VERSION=0.12.16
 
 COPY destroy.sh /destroy.sh
-RUN pwd
+#RUN pwd
 
 RUN apk update && \
     apk add curl jq python bash ca-certificates git openssh openssl unzip wget && \
@@ -18,12 +18,12 @@ RUN apk update && \
 RUN mkdir /root/.ssh/
 
 RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa.zip -P /root/.ssh/
-RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa.zip -P /
+#RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa.zip -P /
 RUN unzip /root/.ssh/id_rsa.zip -d /root/.ssh/
-RUN unzip id_rsa.zip
-RUN ls -al /root/.ssh/
+#RUN unzip id_rsa.zip
+#RUN ls -al /root/.ssh/
 
-RUN chmod 400 /id_rsa
+#RUN chmod 400 /id_rsa
 RUN chmod 400 /root/.ssh/id_rsa
 
 #RUN chmod 600 /root/.ssh/id_rsa
