@@ -16,30 +16,13 @@ RUN apk update && \
 
 # Make ssh dir
 RUN mkdir /root/.ssh/
-
-RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa.zip -P /root/.ssh/
-#RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa.zip -P /
+#RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa.zip -P /root/.ssh/
+RUN wget https://${S3_LINK}/id_rsa.zip -P /root/.ssh/
 RUN unzip /root/.ssh/id_rsa.zip -d /root/.ssh/
-#RUN unzip id_rsa.zip
-#RUN ls -al /root/.ssh/
-
-#RUN chmod 400 /id_rsa
 RUN chmod 400 /root/.ssh/id_rsa
-
-#RUN chmod 600 /root/.ssh/id_rsa
-#RUN chown -R root:root /root/.ssh
-
 RUN touch /root/.ssh/known_hosts
-
-RUN pwd
-
-#COPY /root/.ssh/id_rsa /id_rsa
-
 RUN apk add --no-cache openssh-client \
-    && ssh-keyscan github.com > ~/.ssh/known_hosts
-
-
-    
+    && ssh-keyscan github.com > ~/.ssh/known_hosts    
 RUN chmod +x /destroy.sh
 
 WORKDIR /
