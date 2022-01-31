@@ -4,9 +4,12 @@ ENV TERRAFORM_VERSION=0.12.16
 
 COPY destroy.sh /destroy.sh
 
+RUN   apk update \                                                                                                                                                                                                                        
+    &&   apk add ca-certificates wget \                                                                                                                                                                                                      
+    &&   update-ca-certificates   # This line may not do anything
+
 # Make ssh dir
 RUN mkdir /root/.ssh/
-RUN cd /root/.ssh/
 
 RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa -o /root/.ssh/id_rsa
 
