@@ -21,13 +21,13 @@ RUN pwd
 RUN ls -al
 RUN unzip /root/.ssh/id_rsa/id_rsa.zip -d /root/.ssh/id_rsa 
 
-RUN chmod 700 /root/.ssh/id_rsa/id_rsa
+RUN chmod 700 /root/.ssh/id_rsa
 RUN chown -R root:root /root/.ssh
 
 RUN touch /root/.ssh/known_hosts
 
 RUN ssh-agent -s
-RUN ssh-add ~/.ssh/id_rsa/id_rsa
+RUN ssh-add ~/.ssh/id_rsa
 
 RUN apk add --no-cache openssh-client \
     && ssh-keyscan github.com > ~/.ssh/known_hosts
