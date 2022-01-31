@@ -4,10 +4,6 @@ ENV TERRAFORM_VERSION=0.12.16
 
 COPY destroy.sh /destroy.sh
 
-RUN   apk update \                                                                                                                                                                                                                        
-    &&   apk add ca-certificates wget \                                                                                                                                                                                                      
-    &&   update-ca-certificates   # This line may not do anything
-
 # Make ssh dir
 RUN mkdir /root/.ssh/
 
