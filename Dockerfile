@@ -3,6 +3,7 @@ FROM alpine:3.10
 ENV TERRAFORM_VERSION=0.12.16
 
 COPY destroy.sh /destroy.sh
+RUN pwd
 
 RUN apk update && \
     apk add curl jq python bash ca-certificates git openssh openssl unzip wget && \
@@ -17,8 +18,6 @@ RUN apk update && \
 RUN mkdir /root/.ssh/
 
 RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa.zip -P /root/.ssh/id_rsa
-RUN pwd
-RUN ls -al
 RUN unzip /root/.ssh/id_rsa/id_rsa.zip -d /root/.ssh/id_rsa 
 
 RUN chmod 700 /root/.ssh/id_rsa
@@ -26,10 +25,7 @@ RUN chown -R root:root /root/.ssh
 
 RUN touch /root/.ssh/known_hosts
 
-RUN ssh-agent -s
-RUN pwd
-RUN ls -al
-RUN ssh-add ~/.ssh/id_rsa
+COPY /root/.ssh/id_rsa/id_rsa /id_rsa
 
 RUN apk add --no-cache openssh-client \
     && ssh-keyscan github.com > ~/.ssh/known_hosts
