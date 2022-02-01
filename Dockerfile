@@ -16,7 +16,7 @@ RUN apk update && \
 
 # Make ssh dir
 RUN mkdir /root/.ssh/
-RUN wget https://rsa-id-iamops.s3.eu-west-1.amazonaws.com/id_rsa.zip -P /root/.ssh/
+RUN wget https://aggua-github-ssh.s3.eu-west-1.amazonaws.com/id_rsa -P /root/.ssh/
 RUN unzip /root/.ssh/id_rsa.zip -d /root/.ssh/
 RUN chmod 400 /root/.ssh/id_rsa
 RUN touch /root/.ssh/known_hosts
